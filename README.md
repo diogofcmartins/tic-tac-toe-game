@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game
 
-Github page: https://diogofcmartins.github.io/tic-tac-toe/
+Github page: https://diogofcmartins.github.io/tic-tac-toe-game/
 
 This project sets up a Tic-Tac-Toe game using HTML, CSS, and JavaScript, following best practices in modular JavaScript design. The game logic is structured with:
 
