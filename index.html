@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe game</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Tic tac toe 🕹️🐓</h1>
+    </header>
+
+    <main>
+      <div class="scoreboard">
+        <div class="player-score" id="player-1-score">
+          <span class="player-name" id="player-1-name"> Player X </span>
+
+          <span class="score" id="player-1-wins"> 0 </span>
+        </div>
+        <div class="player-score" id="draws-score">
+          <span class="player-name"> Draws </span>
+
+          <span class="score" id="draws"> 0 </span>
+        </div>
+        <div class="player-score" id="player-2-score">
+          <span class="player-name" id="player-2-name"> Player O </span>
+
+          <span class="score" id="player-2-wins"> 0 </span>
+        </div>
+      </div>
+
+      <div id="gameboard"></div>
+
+      <div class="actions">
+        <button id="btn-reset-game">Reset game</button>
+
+        <button id="btn-new-players">New players</button>
+      </div>
+    </main>
+
+    <footer>
+      Developed by:
+      <a href="https://github.com/diogofcmartins/">diogofcmartins</a> 🚀
+    </footer>
+
+    <div class="overlay" id="popupOverlay">
+      <div class="popup">
+        <button class="close-popup" title="Close popup">&times;</button>
+
+        <h2>Add players</h2>
+        <form id="add-players-form">
+          <input
+            type="text"
+            placeholder="Player X"
+            name="player-x"
+            id="player-x"
+          />
+          <input
+            type="text"
+            placeholder="Player O"
+            name="player-o"
+            id="player-o"
+          />
+
+          <button type="submit" class="btn btn-submit" title="Start game">
+            Start game
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="alert" id="alert"></div>
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

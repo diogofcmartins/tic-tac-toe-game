@@ -1,0 +1,250 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #e2e2e2;
+  background-color: #212121;
+  font-family: 'IBM Plex Sans', serif;
+  font-size: 1.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+main {
+  max-width: 75%;
+  margin: 0 auto;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+footer {
+  margin-top: 1.4rem;
+  text-align: center;
+}
+
+a {
+  font-weight: 600;
+  color: #e2e2e2;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.scoreboard .player-score {
+  border-radius: 1.6rem;
+  background-color: #212121;
+  padding: 0.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #e2e2e2;
+  text-align: center;
+  border: 0.1rem solid #e2e2e2;
+  border-radius: 1.6rem;
+  width: 130px;
+}
+
+.scoreboard .player-score.active {
+  background-color: #e2e2e2;
+  color: #212121;
+}
+
+.scoreboard .player-score .player-name {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.scoreboard .player-score .score {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin-top: 0.8rem;
+}
+
+#gameboard {
+  width: calc((130px * 3) + (2 * 0.8rem));
+  border: 0.1rem solid #e3e3e3;
+  border-radius: 1.6rem;
+  padding: 0.8rem;
+  display: grid;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto 1.6rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template: 1fr 1fr 1fr;
+  grid-gap: 0.8rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.actions button {
+  border: 0.1rem solid #e2e2e2;
+  color: #e2e2e2;
+  border-radius: 1.6rem;
+  padding: 1rem 1.6rem;
+  background-color: #212121;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions button:focus {
+  background-color: #e2e2e2;
+  border-color: 0.1rem solid #212121;
+  color: #212121;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.6rem;
+  width: 30rem;
+  text-align: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.popup h2,
+.popup p {
+  color: #212121;
+}
+
+.popup p {
+  text-align: left;
+}
+
+.popup p .switch {
+  margin-left: 0.8rem;
+}
+
+.popup input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.8rem;
+}
+
+.popup button {
+  background-color: #197dcf;
+  color: #e2e2e2;
+  border: 0.1rem solid transparent;
+  padding: 0.8rem 2rem;
+  text-align: center;
+  border-radius: 1.6rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.popup button:hover,
+.popup button:focus {
+  border-color: #197dcf;
+}
+
+.popup .close-popup {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.5rem;
+  color: #212121;
+  cursor: pointer;
+  font-size: 2.4rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  margin-top: 0;
+}
+
+.cell {
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 0.1rem solid #e2e2e2;
+  border-radius: 1.6rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  font-size: 6.5rem;
+  transition: all 0.3s;
+}
+
+.cell:hover {
+  box-shadow: 0 0 0.4rem 0.1rem #e2e2e2;
+}
+
+.cell.winner {
+  background-color: #e2e2e2;
+  color: #212121;
+}
+
+#alert {
+  position: fixed;
+  left: -50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  background-color: #e2e2e2;
+  width: 30%;
+  padding: 1.4rem 1.4rem;
+  border-radius: 0.8rem;
+  color: #212121;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.8s;
+  text-align: center;
+}
+
+#alert.active {
+  left: 50%;
+}
